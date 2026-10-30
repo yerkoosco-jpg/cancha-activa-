@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Canchas - Cancha Activa</title>
+    <link rel="stylesheet" href="cancha.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cancha Activa</h1>
+    </header>
+    <main class="container">
+        <section class="form-section">
+            <h2>Formulario de Reserva</h2>
+            <form id="reservaForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" required placeholder="Nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="contacto">Número de Contacto:</label>
+                    <input type="tel" id="contacto" required placeholder="Numero de Contacto">
+                </div>
+                <div class="form-group">
+                    <label for="tipoCancha">Seleccione el Deporte / Cancha:</label>
+                    <select id="tipoCancha" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Fútbol">Fútbol Bs 120/hr</option>
+                        <option value="Básquetbol">Básquetbol Bs 70/hr</option>
+                        <option value="Voleibol">Voleibol Bs 60/hr</option>
+                    </select>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora de Inicio:</label>
+                        <input type="time" id="hora" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="duracion">Duración (en horas):</label>
+                    <input type="number" id="duracion" min="1" max="12" required placeholder="Ej. 2">
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-confirmar">Confirmar Reserva</button>
+                    <button type="button" id="btnReiniciar" class="btn btn-limpiar">Limpiar Campos</button>
+                </div>
+            </form>
+        </section>
+        <section id="resumenSeccion" class="resumen-section hidden">
+            <h2>Resumen de Reserva</h2>
+            <div id="resumenContenido">
+            </div>
+            <div class="mensaje-exito">
+                ¡Reserva registrada con éxito!
+            </div>
+        </section>
+    </main>
+
+    <script src="cancha.js"></script>
+</body>
+</html>
